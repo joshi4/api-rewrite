@@ -1,0 +1,22 @@
+previewsEnabled: true
+previewsExpireAfterDays: 3
+services:
+- type: web
+  name: go-server
+  env: go
+  buildCommand: cd server; go build -o app .
+  startCommand: cd server; ./app
+- type: web
+  name: passthrough
+  env: static
+  buildCommand: echo "hi"
+  staticPublishPath: ./static/
+  routes:
+  - type: rewrite
+    source: /api
+    destination:
+      fromService:
+        name: go-server
+        type: web 
+        property: hostport
+
