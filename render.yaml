@@ -11,7 +11,7 @@ services:
   env: go
   buildCommand: cd server; go build -o app .
   startCommand: cd server; ./app
-  envVar:
+  envVars:
   - key: API_HOST
     fromService:
       name: passthrough
