@@ -14,9 +14,8 @@ services:
   routes:
   - type: rewrite
     source: /api
-    destination:
-      fromService:
-        name: go-server
-        type: web 
-        property: hostport
+    fromService:
+      name: go-server
+      type: web 
+      property: hostport
 
