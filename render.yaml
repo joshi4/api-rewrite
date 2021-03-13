@@ -3,6 +3,7 @@ previewsExpireAfterDays: 3
 services:
 - type: web
   name: passthrough
+  branch: master
   env: static
   buildCommand: echo "hi"
   staticPublishPath: ./static/
