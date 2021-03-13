@@ -9,6 +9,7 @@ services:
   staticPublishPath: ./static/
 - type: web
   name: go-server
+  branch: master
   env: go
   buildCommand: cd server; go build -o app .
   startCommand: cd server; ./app
