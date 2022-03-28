@@ -7,12 +7,18 @@ services:
   env: static
   buildCommand: echo "hi"
   staticPublishPath: ./static/
+  autoDeployFilter:
+    paths:
+    - "static/**"
 - type: web
   name: go-server
   branch: master
   env: go
   buildCommand: cd server; go build -o app .
   startCommand: cd server; ./app
+  autoDeployFilter:
+    paths:
+    - "./server/**"
   envVars:
   - key: API_HOST
     fromService:
