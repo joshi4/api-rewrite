@@ -17,6 +17,7 @@ services:
   autoDeployFilter:
     paths:
     - "server/*.go"
+    - "server/**/*"
     ignoredPaths:
     - "readme.md"
   buildCommand: cd server; go build -o app .
