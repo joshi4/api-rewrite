@@ -10,15 +10,14 @@ services:
   autoDeployFilter:
     paths:
     - "static/**"
+    ignoredPaths:
+    - "readme.md"
 - type: web
   name: go-server
   branch: master
   env: go
   buildCommand: cd server; go build -o app .
   startCommand: cd server; ./app
-  autoDeployFilter:
-    paths:
-    - "./server/**"
   envVars:
   - key: API_HOST
     fromService:
