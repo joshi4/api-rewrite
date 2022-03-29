@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	fmt.Println("starting...")
 	branch := os.Getenv("RENDER_GIT_BRANCH")
 	ex := os.Getenv("API_HOST")
 	http.ListenAndServe(":3000", http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
