@@ -7,19 +7,10 @@ services:
   env: static
   buildCommand: echo "hi"
   staticPublishPath: ./static/
-  autoDeployFilter:
-    ignoredPaths:
-    - "readme.md"
 - type: web
   name: go-server
   branch: master
   env: go
-  autoDeployFilter:
-    paths:
-    - "server/*.go"
-    - "server/**/*"
-    ignoredPaths:
-    - "readme.md"
   buildCommand: cd server; go build -o app .
   startCommand: cd server; ./app
   envVars:
