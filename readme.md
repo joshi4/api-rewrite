@@ -1,3 +1,3 @@
 ## README
 
-lorep ipsum ...
+lorep ipsum
