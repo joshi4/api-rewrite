@@ -7,6 +7,9 @@ services:
   env: static
   buildCommand: echo "hi"
   staticPublishPath: ./static/
+  autoDeployFilter:
+    paths:
+    - static/**
 - type: web
   name: go-server
   branch: master
