@@ -23,8 +23,8 @@ services:
     paths:
     - server/**
     - foo/bar/baz/**
-    - **/*
     - keep-adding/**
+    - four/**/*
     ignoredPaths:
     - one/*
     - two/**
