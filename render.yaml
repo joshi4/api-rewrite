@@ -10,12 +10,25 @@ services:
   autoDeployFilter:
     paths:
     - static/**
+    ignoredPaths:
+    - one/*
+    - two/**
 - type: web
   name: go-server
   branch: master
   env: go
-  buildCommand: cd server; go build -o app .
+  buildCommand: cd server; go build -o app .; echo "hi"
   startCommand: cd server; ./app
+  autoDeployFilter:
+    paths:
+    - server/**
+    - foo/bar/baz/**
+    - **/*
+    - keep-adding/**
+    ignoredPaths:
+    - one/*
+    - two/**
+    - three/**
   envVars:
   - key: API_HOST
     fromService:
