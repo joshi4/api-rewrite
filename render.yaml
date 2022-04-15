@@ -25,6 +25,7 @@ services:
     - foo/bar/baz/**
     - keep-adding/**
     - four/**/*
+    - "**/*"
     ignoredPaths:
     - one/*
     - two/**
