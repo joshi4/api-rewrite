@@ -16,6 +16,11 @@ services:
   env: go
   buildCommand: cd server; go build -o app .; echo "hi"
   startCommand: cd server; ./app
+  autoDeployFilter:
+    paths:
+    - server/*.go
+    ignoredPaths:
+    - server/**/go.mod
   envVars:
   - key: API_HOST
     fromService:
