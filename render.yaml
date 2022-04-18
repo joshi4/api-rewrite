@@ -9,27 +9,13 @@ services:
   staticPublishPath: ./static/
   autoDeployFilter:
     paths:
-    - static/**
-    ignoredPaths:
-    - one/*
-    - two/**
+    - static/**/*
 - type: web
   name: go-server
   branch: master
   env: go
   buildCommand: cd server; go build -o app .; echo "hi"
   startCommand: cd server; ./app
-  autoDeployFilter:
-    paths:
-    - server/**
-    - foo/bar/baz/**
-    - keep-adding/**
-    - four/**/*
-    - "**/*"
-    ignoredPaths:
-    - one/*
-    - two/**
-    - three/**
   envVars:
   - key: API_HOST
     fromService:
