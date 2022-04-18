@@ -5,7 +5,7 @@ services:
   name: passthrough
   branch: master
   env: static
-  buildCommand: echo "hi"
+  buildCommand: echo "hiya"
   staticPublishPath: ./static/
   autoDeployFilter:
     paths:
