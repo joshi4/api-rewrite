@@ -27,3 +27,13 @@ services:
       name: passthrough
       type: web
       envVarKey: RENDER_EXTERNAL_URL
+- type: web
+  name: diff-repo-flask
+  branch: master
+  env: python
+  repo: https://github.com/render-examples/flask-hello-world
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn app:app
+  autoDeployFilter:
+    ignoredPaths:
+    - README.md
