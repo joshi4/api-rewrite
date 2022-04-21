@@ -31,7 +31,7 @@ services:
   name: diff-repo-flask
   branch: master
   env: python
-  repo: https://github.com/render-examples/flask-hello-world
+  repo: https://github.com/joshi4/flask-hello-world
   buildCommand: pip install -r requirements.txt
   startCommand: gunicorn app:app
   autoDeployFilter:
