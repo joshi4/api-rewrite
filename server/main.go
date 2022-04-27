@@ -12,7 +12,9 @@ func main() {
 	http.ListenAndServe(":3000", http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte(fmt.Sprintf("API_HOST is: %s", ex)))
-		if branch == "" || branch == "master" || branch == "main" {
+		if branch == "" ||
+			branch == "master" ||
+			branch == "main" {
 			w.Write([]byte("main branch\n"))
 			return
 		}
