@@ -8,7 +8,7 @@ services:
   pullRequestPreviewsEnabled: true
   buildCommand: echo "hiya"
   staticPublishPath: ./static/
-  autoDeployFilter:
+  buildFilter:
     paths:
     - static/**/*
 - type: web
@@ -18,7 +18,7 @@ services:
   env: go
   buildCommand: cd server; go build -o app .; echo "hi"
   startCommand: cd server; ./app
-  autoDeployFilter:
+  buildFilter:
     paths:
     - server/*.go
     ignoredPaths:
@@ -37,6 +37,6 @@ services:
   repo: https://github.com/joshi4/flask-hello-world
   buildCommand: pip install -r requirements.txt
   startCommand: gunicorn app:app
-  autoDeployFilter:
+  buildFilter:
     ignoredPaths:
     - README.md
