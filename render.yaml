@@ -18,6 +18,9 @@ services:
   env: go
   buildCommand: cd server; go build -o app .; echo "hi"
   startCommand: cd server; ./app
+  buildFilter:
+    paths: []
+    ignoredPaths: []
   envVars:
   - key: API_HOST
     fromService:
