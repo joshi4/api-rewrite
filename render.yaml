@@ -8,9 +8,6 @@ services:
   pullRequestPreviewsEnabled: true
   buildCommand: echo "hiya"
   staticPublishPath: ./static/
-  buildFilter:
-    paths:
-    - static/**/*
 - type: web
   pullRequestPreviewsEnabled: true
   name: go-server
