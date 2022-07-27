@@ -5,16 +5,18 @@ services:
   name: passthrough
   branch: master
   env: static
+  rootDir: static
   pullRequestPreviewsEnabled: true
   buildCommand: echo "hiya"
-  staticPublishPath: ./static/
+  staticPublishPath: ./
 - type: web
   pullRequestPreviewsEnabled: true
   name: go-server
   branch: master
+  rootDir: server
   env: go
-  buildCommand: cd server; go build -o app .; echo "hi"
-  startCommand: cd server; ./app
+  buildCommand: go build -o app .; echo "hi"
+  startCommand: ./app
   buildFilter:
     paths: []
     ignoredPaths: []
