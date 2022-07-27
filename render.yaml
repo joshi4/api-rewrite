@@ -19,7 +19,8 @@ services:
   startCommand: ./app
   buildFilter:
     paths: []
-    ignoredPaths: ["server/cmd/**"]
+    ignoredPaths:
+    - "server/cmd/**"
   envVars:
   - key: API_HOST
     fromService:
