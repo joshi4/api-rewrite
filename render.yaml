@@ -18,7 +18,8 @@ services:
   buildCommand: go build -o app .; echo "hi"
   startCommand: ./app
   buildFilter:
-    paths: []
+    paths:
+    - "server/**/*"
   envVars:
   - key: API_HOST
     fromService:
