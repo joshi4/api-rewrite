@@ -20,6 +20,8 @@ services:
   buildFilter:
     paths:
     - "server/**/*"
+    ignoredPaths:
+    - "server/cmd/**"
   envVars:
   - key: API_HOST
     fromService:
