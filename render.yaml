@@ -5,7 +5,7 @@ services:
   name: passthrough
   branch: master
   env: static
-  rootDir: static
+  rootDir: /static/../foo
   pullRequestPreviewsEnabled: true
   buildCommand: echo "hiya"
   staticPublishPath: ./
