@@ -1,4 +1,4 @@
-previewsEnabled: false
+previewsEnabled: true
 previewsExpireAfterDays: 3
 services:
 - type: web
@@ -39,3 +39,11 @@ services:
   buildFilter:
     ignoredPaths:
     - README.md
+- type: cron
+  name: test-cron-preview
+  branch: master
+  env: python
+  rootDir: ./static
+  buildCommand: echo "hiya"
+  schedule: "0/5 * * * *"
+  startCommand: date
