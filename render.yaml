@@ -53,6 +53,6 @@ services:
   envVars:
   - key: API_HOST
     fromService:
-      name: go-server
+      name: passthrough
       type: web
       envVarKey: API_HOST
