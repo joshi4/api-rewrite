@@ -9,6 +9,9 @@ services:
   pullRequestPreviewsEnabled: true
   buildCommand: echo "hiya"
   staticPublishPath: ./
+  envVars:
+  - key: API_HOST
+    generateValue: true
 - type: web
   pullRequestPreviewsEnabled: true
   name: go-server
@@ -27,7 +30,7 @@ services:
     fromService:
       name: passthrough
       type: web
-      envVarKey: RENDER_EXTERNAL_URL
+      envVarKey: API_HOST
 - type: web
   name: diff-repo-flask
   branch: master
@@ -47,3 +50,9 @@ services:
   buildCommand: echo "hiya"
   schedule: "0/5 * * * *"
   startCommand: date
+  envVars:
+  - key: API_HOST
+    fromService:
+      name: go-server
+      type: web
+      envVarKey: API_HOST
