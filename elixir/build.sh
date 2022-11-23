@@ -8,6 +8,7 @@ MIX_ENV=prod mix compile
 
 # Compile assets
 npm install --prefix ./assets
+npm audit fix --force --prefix ./assets
 npm run deploy --prefix ./assets
 mix phx.digest
 
