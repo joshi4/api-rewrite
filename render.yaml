@@ -6,14 +6,12 @@ services:
   branch: master
   env: static
   rootDir: ./static
-  pullRequestPreviewsEnabled: true
   buildCommand: echo "hiya"
   staticPublishPath: ./
   envVars:
   - key: API_HOST
     generateValue: true
 - type: web
-  pullRequestPreviewsEnabled: true
   name: go-server
   branch: master
   rootDir: server
@@ -34,7 +32,6 @@ services:
 - type: web
   name: diff-repo-flask
   branch: master
-  pullRequestPreviewsEnabled: true
   env: python
   repo: https://github.com/joshi4/flask-hello-world
   buildCommand: pip install -r requirements.txt
