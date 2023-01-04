@@ -3,7 +3,6 @@ previewsExpireAfterDays: 3
 services:
 - type: web
   name: passthrough
-  branch: master
   env: static
   rootDir: ./static
   buildCommand: echo "hiya"
@@ -13,7 +12,6 @@ services:
     generateValue: true
 - type: web
   name: go-server
-  branch: master
   rootDir: server
   env: go
   buildCommand: go build -o app .; echo "hi"
@@ -31,7 +29,6 @@ services:
       envVarKey: API_HOST
 - type: web
   name: diff-repo-flask
-  branch: master
   env: python
   repo: https://github.com/joshi4/flask-hello-world
   buildCommand: pip install -r requirements.txt
@@ -41,7 +38,6 @@ services:
     - README.md
 - type: cron
   name: test-cron-preview
-  branch: master
   env: python
   rootDir: ./static
   buildCommand: echo "hiya"
