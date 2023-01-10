@@ -16,9 +16,9 @@ func main() {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte(fmt.Sprintf("API_HOST is: %s", ex)))
 		if branch == "" || branch == "master" || branch == "main" {
-			w.Write([]byte("Main branch\n"))
+			w.Write([]byte("main branch\n"))
 			return
 		}
-		w.Write([]byte("feature branch"))
+		w.Write([]byte("Feature branch"))
 	}))
 }
