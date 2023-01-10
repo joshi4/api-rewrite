@@ -19,6 +19,6 @@ func main() {
 			w.Write([]byte("main branch\n"))
 			return
 		}
-		w.Write([]byte("Feature branch"))
+		w.Write([]byte("feature branch"))
 	}))
 }
