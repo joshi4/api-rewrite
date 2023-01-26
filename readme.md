@@ -1,3 +1,3 @@
 ## README
 
-Lorem Ipsum Solis.
+Lorem Ipsum Solis
