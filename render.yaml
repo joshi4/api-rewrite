@@ -2,20 +2,10 @@ previewsEnabled: true
 previewsExpireAfterDays: 3
 services:
 - type: web
-  name: passthrough
-  env: static
-  rootDir: ./static
-  buildCommand: echo "hiya"
-  maxShutdownDelaySeconds: 100
-  staticPublishPath: ./
-  envVars:
-  - key: API_HOST
-    generateValue: true
-- type: web
   name: go-server
   rootDir: server
   env: go
-  maxShutdownDelaySeconds: 110
+  maxShutdownDelaySeconds: -1
   buildCommand: go build -o app .; echo "hi"
   startCommand: ./app
   buildFilter:
@@ -23,21 +13,6 @@ services:
     - "server/**/*"
     ignoredPaths:
     - "server/cmd/**"
-  envVars:
-  - key: API_HOST
-    fromService:
-      name: passthrough
-      type: web
-      envVarKey: API_HOST
-- type: web
-  name: diff-repo-flask
-  env: python
-  repo: https://github.com/joshi4/flask-hello-world
-  buildCommand: pip install -r requirements.txt
-  startCommand: gunicorn app:app
-  buildFilter:
-    ignoredPaths:
-    - README.md
 - type: cron
   name: test-cron-preview
   env: python
@@ -45,6 +20,7 @@ services:
   buildCommand: echo "hiya"
   schedule: "0/5 * * * *"
   startCommand: date
+  maxShutdownDelaySeconds: 1
   envVars:
   - key: API_HOST
     fromService:
