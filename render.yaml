@@ -15,6 +15,7 @@ services:
   name: go-server
   rootDir: server
   env: go
+  maxShutdownDelaySeconds: 110
   buildCommand: go build -o app .; echo "hi"
   startCommand: ./app
   buildFilter:
