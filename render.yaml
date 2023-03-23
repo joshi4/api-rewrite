@@ -17,7 +17,6 @@ services:
   env: go
   buildCommand: go build -o app .; echo "hi"
   startCommand: ./app
-  maxShutdownDelaySeconds: 400
   buildFilter:
     paths:
     - "server/**/*"
@@ -35,7 +34,6 @@ services:
   repo: https://github.com/joshi4/flask-hello-world
   buildCommand: pip install -r requirements.txt
   startCommand: gunicorn app:app
-  maxShutdownDelaySeconds: -1
   buildFilter:
     ignoredPaths:
     - README.md
